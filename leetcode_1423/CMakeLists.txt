@@ -9,10 +9,10 @@ set(SRC_DIR "src")
 set(INCLUDE_DIR "include")
 
 # Add executable target
-add_executable(scraper
+add_executable(main.o
     ${SRC_DIR}/main.cpp
     ${SRC_DIR}/solution.cpp
 )
 
 # Include header files
-target_include_directories(scraper PRIVATE ${INCLUDE_DIR})
+target_include_directories(main.o PRIVATE ${INCLUDE_DIR})
