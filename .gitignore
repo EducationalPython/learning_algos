@@ -37,6 +37,7 @@ CMakeFiles/
 *.jar
 *.war
 *.ear
+*.dSYM/
 
 # Keep CMakeLists.txt
 !CMakeLists.txt
