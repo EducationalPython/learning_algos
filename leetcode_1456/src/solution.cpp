@@ -29,17 +29,17 @@ bool isVowel(char c) {
 }
 
 int Solution::maxVowels(string s, int k) {
-    int windowStartIndex = -1, windowEndIndex = 0;
-    deque<int> vowelIndexDeque;
-    size_t maxVowelCount = 0;
+    int windowStartIndex = 0, windowEndIndex = 1;
+    int vowelCountWindow = isVowel(s[0]);
+    int maxVowelCount = vowelCountWindow;
     while(windowEndIndex < s.size()) {
         if (windowEndIndex - windowStartIndex >= k) {
+            vowelCountWindow -= static_cast<int>(isVowel(s[windowStartIndex]));
             ++windowStartIndex;
         }
-        if (!vowelIndexDeque.empty() && vowelIndexDeque.front() < windowStartIndex) vowelIndexDeque.pop_front();
-        if (isVowel(s[windowEndIndex])) vowelIndexDeque.push_back(windowEndIndex);
+        vowelCountWindow += isVowel(s[windowEndIndex]);
+        maxVowelCount = max(maxVowelCount, vowelCountWindow);
         ++windowEndIndex;
-        maxVowelCount = max(maxVowelCount, vowelIndexDeque.size());
     }
     return maxVowelCount;
 }
