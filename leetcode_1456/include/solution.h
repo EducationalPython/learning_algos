@@ -6,3 +6,5 @@ class Solution {
 public:
     int maxVowels(string s, int k);
 };
+
+bool isVowel(char c);

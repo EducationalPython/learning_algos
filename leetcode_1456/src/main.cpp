@@ -6,8 +6,8 @@ using namespace std;
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
-    string s = "leetcode";
-    int k = 3;
-    cout << Solution().maxVowels(s, k) << '\n'; // Expected: 2 "lee", "eet", "ode"
+    string s = "beautiful";
+    int k = 4;
+    cout << Solution().maxVowels(s, k) << '\n';
     return 0;
 }
